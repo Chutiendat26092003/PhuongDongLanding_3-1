@@ -17,11 +17,6 @@
             class="h-[685px] bg-cover bg-center" >
             <div id="header" class="container xl:max-w-screen-xl lg:max-w-screen-md mx-auto z-2 mx-auto max-w-7xl" >
                 <nav class="xl:max-w-screen-xl lg:max-w-screen-md  mx-auto fixed top-0 left-0 right-0 z-50 flex justify-between py-4">
-                    <!-- Mobile button-->
-                    <div id="mobile-menu" class="xl:hidden mobile-menu-btn">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                    
                     <div class="flex items-center md:gap-x-12">
                         <a aria-label="Home" href="#"
                             ><img src="./img/image 3.png" alt=""
@@ -33,7 +28,7 @@
                     </label>
                     <input class="hidden" type="checkbox" id="show" > -->
                     <ul
-                        class=" lg:hidden md:hidden sm:hidden show flex items-center hidden md:flex md:gap-x-6 text-base font-semibold mx-8"
+                        class="xl:flex  md:hidden sm:hidden hidden show flex items-center md:gap-x-6 text-base font-semibold mx-8"
                     >
                         <li>
                             <a class="py-2" href="#">Giới thiệu</a>
@@ -67,9 +62,9 @@
                     </div>
                 </nav>
 
-                <div class="text-white mt-24">
+                <div class="text-white mt-36">
                     <div class="flex items-center">
-                        <span class="text-base font-semibold tracking-widest">TẦM SOÁT UNG THƯ TUYẾN GIÁP</span>
+                        <span class="text-base font-semibold tracking-widest uppercase ">TẦM SOÁT UNG THƯ TUYẾN GIÁp</span>
                         <div class="w-[117px] h-[1px] bg-white place-content-center ml-2 rounded-sm"></div>
                     </div>
                     <div class="max-w-xl my-2">
@@ -83,16 +78,23 @@
                             trị sớm và hiệu quả nhất.
                         </span>
                     </div>
-                    <div>
+                    <div class=" mb-4">
                         <span class="text-base"
                             >Quý khách vui lòng để lại số điện thoại, chúng tôi sẽ
                             liên hệ lại ngay!</span
                         >
                     </div>
-                    <div>
-                        <input class="absolute z-1" type="text" />
-                        <button class="relative z-4">sss</button>
-                    </div>
+                    <form action="post">
+                        <div class="relative z-1 xl:w-[539px] lg:w-[500px] sm:w-full"> 
+                            <input class="xl:w-[539px] lg:w-[500px] w-full rounded-full pl-7 p-4 text-black focus:outline-none" type="text" placeholder="Nhập số điện thoại..."/>
+                            <button class="absolute z-4 right-0 m-2   bg-gradient-to-r from-cyan-500 to-green-500 rounded-3xl px-1 py-1 bg-green-500 shadow-lg shadow-green-500/50">
+                                <div class="flex">
+                                    <img src="./img/Frame.png" class="p-1" alt="submit">
+                                    <span class="font-semibold uppercase p-1">GỬI THÔNG TIN</span>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

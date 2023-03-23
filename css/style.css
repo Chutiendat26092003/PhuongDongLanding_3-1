@@ -2,11 +2,11 @@
     font-family: 'Lato', sans-serif;
 }
 
-input[type='checkbox']:checked ~ .show {
+/* input[type='checkbox']:checked ~ .show {
     display: block;
 }
 
 
-/* input[type='checkbox'] ~ .show {
+input[type='checkbox'] ~ .show {
     display: none;
 } */
