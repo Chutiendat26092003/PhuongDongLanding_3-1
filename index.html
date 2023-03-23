@@ -9,24 +9,31 @@
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">    
     </head>
     <body class="flex h-full flex-col">
-        <div
-            style="background-image: url('./img/Group 10037.png')"
-            class="h-[685px] bg-cover bg-center"
-        >
-            <div
-                class="container max-w-screen-xl mx-auto z-2 mx-auto max-w-7xl"
-            >
-                <nav class="sticky top-0 z-50 flex justify-between py-4">
+        <div style="background-image: url('./img/Group 10037.png')"
+            class="h-[685px] bg-cover bg-center" >
+            <div id="header" class="container xl:max-w-screen-xl lg:max-w-screen-md mx-auto z-2 mx-auto max-w-7xl" >
+                <nav class="xl:max-w-screen-xl lg:max-w-screen-md  mx-auto fixed top-0 left-0 right-0 z-50 flex justify-between py-4">
+                    <!-- Mobile button-->
+                    <div id="mobile-menu" class="xl:hidden mobile-menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    
                     <div class="flex items-center md:gap-x-12">
                         <a aria-label="Home" href="#"
                             ><img src="./img/image 3.png" alt=""
                         /></a>
                     </div>
+
+                    <!-- <label for="show" class="xl:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
+                    <input class="hidden" type="checkbox" id="show" > -->
                     <ul
-                        class="flex items-center hidden md:flex md:gap-x-6 text-base font-semibold mx-8"
+                        class=" lg:hidden md:hidden sm:hidden show flex items-center hidden md:flex md:gap-x-6 text-base font-semibold mx-8"
                     >
                         <li>
                             <a class="py-2" href="#">Giới thiệu</a>
@@ -43,17 +50,17 @@
                         <li><a class="py-2" href="#">Đội ngũ bác sĩ</a></li>
                     </ul>
                     <div class="flex items-center gap-x-6 md:gap-x-12">
-                        <a
-                            class="flex text-white bg-gradient-to-r from-cyan-500 to-green-500 rounded-3xl px-1 py-1"
+                        <a  href="tel:123-456-7890"
+                            class="flex text-white bg-gradient-to-r from-cyan-500 to-green-500 rounded-3xl px-1 py-1 bg-green-500 shadow-lg shadow-green-500/50"
                         >
                             <img
                                 class="bg-white rounded-full p-1"
                                 src="./img/Phone, Call.png"
-                                alt=""
+                                alt="phone"
                             />
                             <span
                                 class="font-medium mx-2"
-                                href="tel:123-456-7890"
+                                
                                 >Gọi 1900 1806</span
                             >
                         </a>
@@ -68,13 +75,13 @@
                     <div class="max-w-xl my-2">
                         <span class="text-5xl font-semibold leading-snug tracking-wider">Phát hiện sớm ung thư giúp điều trị dễ dàng</span>
                     </div>
-                    <div class="max-w-md">
+                    <div class="max-w-lg mt-4 mb-9">
                         <span class="text-base leading-4"
                             >Tầm soát ung thư tuyến giáp là phương pháp y học hiện
                             đại giúp phát hiện sớm các tổn thương tiền ung thư. Đây
                             được đánh giá là chìa khóa để đưa ra phương pháp điều
-                            trị sớm và hiệu quả nhất.</span
-                        >
+                            trị sớm và hiệu quả nhất.
+                        </span>
                     </div>
                     <div>
                         <span class="text-base"
@@ -100,5 +107,39 @@
                 </div>
             </div>
         </main>
+
+        <script>
+            var header = document.getElementById('header');
+            var mobileMenu = document.querySelector('#mobile-menu');
+            var headerHeight = header.clientHeight;
+
+            console.log(mobileMenu)
+            console.log(header)
+
+            // đóng mở mobile menu
+            mobileMenu.onclick = function(){
+                var isClose = header.clientHeight === headerHeight;
+                if(isClose){
+                    header.style.height = 'auto';
+                }else {
+                    header.style.height = null;
+                }
+            }
+
+            // tự động đóng
+            var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+            for(var i = 0; i < menuItems.length;i++ ){
+                var menuItem = menuItems[i];
+
+                menuItem.onclick = function(event){
+                    var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                    if(isParentMenu){
+                        event.preventDefault(); // bỏ đi hành vi mặc định
+                    } else {
+                        header.style.height = null;
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
